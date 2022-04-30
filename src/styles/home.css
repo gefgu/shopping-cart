@@ -1,0 +1,21 @@
+.home {
+  flex-grow: 1;
+  flex-shrink: 0;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #fafaf9;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../assets/home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 16px;
+  text-shadow: 1px 1px 3px black;
+}
+
+.home a {
+  text-decoration: none;
+  color: #e7e5e4;
+  font-weight: bold;
+}
