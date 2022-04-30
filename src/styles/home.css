@@ -2,9 +2,6 @@
   flex-grow: 1;
   flex-shrink: 0;
   font-family: sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
   color: #fafaf9;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../assets/home.jpg);
@@ -12,10 +9,44 @@
   background-size: cover;
   padding: 16px;
   text-shadow: 1px 1px 3px black;
+  display: grid;
+  align-items: center;
+  text-align: center;
 }
 
 .home a {
   text-decoration: none;
   color: #e7e5e4;
   font-weight: bold;
+}
+
+.message {
+  justify-self: center;
+}
+
+.footer {
+  align-self: flex-end;
+}
+
+.message h3 {
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+.message h2 {
+  letter-spacing: 1px;
+  font-size: 4rem;
+  line-height: 6rem;
+  margin: 32px;
+}
+
+.message button {
+  color: white;
+  background-color: #1C1917;
+  border: 0;
+  padding: 32px 64px;
+  border-radius: 64px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
 }
