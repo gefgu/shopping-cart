@@ -1,6 +1,8 @@
+import "../styles/header.css";
+
 const Header = () => {
   return (
-    <div>
+    <div className="header">
       <h1>FakeStore</h1>
       <nav>
         <div>Home</div>
