@@ -1,12 +1,12 @@
 import "./styles/app.css";
 import Header from "./components/Header";
-import Home from "./components/Home";
+import RouteSwtich from "./RouteSwitch";
 
 const App = () => {
   return (
     <div className="app">
       <Header />
-      <Home />
+      <RouteSwtich />
     </div>
   );
 };
