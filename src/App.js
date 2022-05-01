@@ -60,7 +60,7 @@ const App = () => {
     <div className="app">
       <BrowserRouter>
         <Header />
-        <RouteSwtich productList={productList} />
+        <RouteSwtich productList={productList} addProductToCart={addProductToCart} />
       </BrowserRouter>
     </div>
   );
