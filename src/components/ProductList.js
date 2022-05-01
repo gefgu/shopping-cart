@@ -1,7 +1,7 @@
 import Card from "./Card";
 import "../styles/productList.css";
 
-const ProductList = ({ productList, addProductToCart }) => {
+const ProductList = ({ productList, addProductToCart, cartList }) => {
   return (
     <div className="product-list">
       {productList.map((product) => (
@@ -9,6 +9,7 @@ const ProductList = ({ productList, addProductToCart }) => {
           product={product}
           key={product.id}
           addProductToCart={addProductToCart}
+          cartList={cartList}
         />
       ))}
     </div>
