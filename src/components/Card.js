@@ -1,6 +1,6 @@
 const Card = ({ product }) => {
   return (
-    <div key={product.name}>
+    <div>
       <p>{product.name}</p>
     </div>
   );
