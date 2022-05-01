@@ -1,7 +1,7 @@
-const Card = () => {
+const Card = ({ product }) => {
   return (
-    <div>
-      <p>Card</p>
+    <div key={product.name}>
+      <p>{product.name}</p>
     </div>
   );
 };

@@ -27,13 +27,11 @@ const App = () => {
     makeProduct("Strength Before Weakness T Shirt"),
   ]);
 
-  console.log(productList);
-
   return (
     <div className="app">
       <BrowserRouter>
         <Header />
-        <RouteSwtich />
+        <RouteSwtich productList={productList} />
       </BrowserRouter>
     </div>
   );
