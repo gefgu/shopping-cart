@@ -37,9 +37,14 @@ const App = () => {
   };
 
   const updateProductQuantityInCart = (product, newQuantity) => {
+    if (newQuantity < 1) {
+      removeProductFromCart(product);
+      return;
+    }
+
     setCartList([
       ...cartList.map((element) => {
-        if (element === product) {
+        if (element.product === product) {
           return { product, quantity: newQuantity };
         }
         return element;
@@ -48,8 +53,11 @@ const App = () => {
   };
 
   const removeProductFromCart = (product) => {
+    let newCart = [...cartList];
     const index = cartList.findIndex((element) => element.product === product);
-    setCartList([cartList.slice(0, index).concat(cartList.slice(index + 1))]);
+    newCart.splice(index, 1);
+    console.log(newCart);
+    setCartList([...newCart]);
   };
 
   useEffect(() => {
@@ -64,6 +72,7 @@ const App = () => {
           productList={productList}
           addProductToCart={addProductToCart}
           cartList={cartList}
+          updateProductQuantityInCart={updateProductQuantityInCart}
         />
       </BrowserRouter>
     </div>

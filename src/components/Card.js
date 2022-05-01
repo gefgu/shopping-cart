@@ -2,9 +2,13 @@ import "../styles/card.css";
 import AddToCart from "./AddToCart";
 import ProductCartCounter from "./ProductCartCounter";
 
-const Card = ({ product, addProductToCart, cartList }) => {
+const Card = ({
+  product,
+  addProductToCart,
+  cartList,
+  updateProductQuantityInCart,
+}) => {
   const productIsInCart = () => {
-    cartList.forEach((e) => console.log(e));
     return cartList.find((element) => element.product === product);
   };
 
@@ -15,7 +19,11 @@ const Card = ({ product, addProductToCart, cartList }) => {
         <p className="product-name">{product.name}</p>
         <p className="product-price">${product.price}</p>
         {productIsInCart() ? (
-          <ProductCartCounter />
+          <ProductCartCounter
+            product={product}
+            updateProductQuantityInCart={updateProductQuantityInCart}
+            cartList={cartList}
+          />
         ) : (
           <AddToCart product={product} addProductToCart={addProductToCart} />
         )}
