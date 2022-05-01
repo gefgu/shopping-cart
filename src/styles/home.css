@@ -10,8 +10,9 @@
   background-position: center;
   padding: 16px;
   text-shadow: 1px 1px 3px black;
-  display: grid;
+  display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -19,14 +20,6 @@
   text-decoration: none;
   color: #e7e5e4;
   font-weight: bold;
-}
-
-.message {
-  justify-self: center;
-}
-
-.footer {
-  align-self: flex-end;
 }
 
 .message h3 {
@@ -39,6 +32,7 @@
   font-size: 4rem;
   line-height: 6rem;
   margin: 32px;
+  margin-bottom: 64px;
 }
 
 .message button {
