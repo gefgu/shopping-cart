@@ -33,7 +33,7 @@ const App = () => {
   const [cartList, setCartList] = useState([]);
 
   const addProductToCart = (product) => {
-    setCartList([...cartList, { ...product, quantity: 1 }]);
+    setCartList([...cartList, { product, quantity: 1 }]);
   };
 
   const updateProductQuantityInCart = (product, newQuantity) => {
