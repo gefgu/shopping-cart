@@ -2,7 +2,7 @@ import "./styles/app.css";
 import Header from "./components/Header";
 import RouteSwtich from "./RouteSwitch";
 import { BrowserRouter } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import uniqid from "uniqid";
 
 const makeProduct = (productName, price) => {
@@ -29,6 +29,32 @@ const App = () => {
     makeProduct("Roshar Map Poster", 10.0),
     makeProduct("Strength Before Weakness T Shirt", 25.0),
   ]);
+
+  const [cartList, setCartList] = useState([]);
+
+  const addProductToCart = (product) => {
+    setCartList([...cartList, { ...product, quantity: 1 }]);
+  };
+
+  const updateProductQuantityInCart = (product, newQuantity) => {
+    setCartList([
+      ...cartList.map((element) => {
+        if (element === product) {
+          return { product, quantity: newQuantity };
+        }
+        return element;
+      }),
+    ]);
+  };
+
+  const removeProductFromCart = (product) => {
+    const index = cartList.findIndex((element) => element.product === product);
+    setCartList([cartList.slice(0, index).concat(cartList.slice(index + 1))]);
+  };
+
+  useEffect(() => {
+    console.log(cartList);
+  }, [cartList]);
 
   return (
     <div className="app">
