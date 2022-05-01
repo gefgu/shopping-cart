@@ -1,8 +1,10 @@
 import "../styles/card.css";
 import AddToCart from "./AddToCart";
+import ProductCartCounter from "./ProductCartCounter";
 
 const Card = ({ product, addProductToCart, cartList }) => {
   const productIsInCart = () => {
+    cartList.forEach((e) => console.log(e));
     return cartList.find((element) => element.product === product);
   };
 
@@ -12,7 +14,11 @@ const Card = ({ product, addProductToCart, cartList }) => {
       <div className="text">
         <p className="product-name">{product.name}</p>
         <p className="product-price">${product.price}</p>
-        <AddToCart product={product} addProductToCart={addProductToCart} />
+        {productIsInCart() ? (
+          <ProductCartCounter />
+        ) : (
+          <AddToCart product={product} addProductToCart={addProductToCart} />
+        )}
       </div>
     </div>
   );
