@@ -2,7 +2,7 @@
   flex-grow: 1;
   flex-shrink: 0;
   font-family: sans-serif;
-  color: #fafaf9;
+  color: white;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../assets/home.jpg);
   background-repeat: no-repeat;
@@ -41,12 +41,13 @@
 }
 
 .message button {
-  color: white;
-  background-color: #1C1917;
+  background-color: white;
+  color: #A3E635;
   border: 0;
-  padding: 24px 96px;
+  padding: 24px 64px;
   border-radius: 72px;
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 3.5rem;
+  font-weight: bolder;
   cursor: pointer;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
 }
