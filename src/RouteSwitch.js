@@ -1,8 +1,14 @@
 import { Routes, Route } from "react-router-dom";
+import Cart from "./components/Cart";
 import Home from "./components/Home";
 import ProductList from "./components/ProductList";
 
-const RouteSwtich = ({ productList, addProductToCart, cartList, updateProductQuantityInCart }) => {
+const RouteSwtich = ({
+  productList,
+  addProductToCart,
+  cartList,
+  updateProductQuantityInCart,
+}) => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -17,6 +23,7 @@ const RouteSwtich = ({ productList, addProductToCart, cartList, updateProductQua
           />
         }
       />
+      <Route path="cart" element={<Cart />} />
     </Routes>
   );
 };
