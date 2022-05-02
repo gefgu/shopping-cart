@@ -7,6 +7,10 @@ const ProductCartCounter = ({
 }) => {
   const productInCart = cartList.find((elem) => elem.product === product);
 
+  const handleInputChange = (e) => {
+    updateProductQuantityInCart(product, e.target.value);
+  };
+
   return (
     <div className="counter">
       <button
@@ -18,9 +22,9 @@ const ProductCartCounter = ({
         -
       </button>
       <input
-        type="text"
+        type="number"
         value={productInCart.quantity}
-        readOnly
+        onChange={handleInputChange}
         className="counter-value"
       />
       <button
