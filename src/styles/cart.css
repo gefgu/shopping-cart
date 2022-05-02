@@ -1,0 +1,32 @@
+.cart-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 700px);
+  justify-content: center;
+  padding: 32px;
+  gap: 64px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 64px;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: sans-serif;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.cart-item img {
+  width: 300px;
+}
+
+.cart-item .product-name {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.cart-item .description {
+  font-size: 1.25rem;
+}
