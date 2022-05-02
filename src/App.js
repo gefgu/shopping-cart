@@ -37,6 +37,7 @@ const App = () => {
   };
 
   const updateProductQuantityInCart = (product, newQuantity) => {
+    newQuantity = +newQuantity;
     if (newQuantity < 1) {
       removeProductFromCart(product);
       return;
@@ -59,10 +60,12 @@ const App = () => {
     setCartList([...newCart]);
   };
 
+  const cartSize = cartList.reduce((prev, curr) => curr.quantity + prev, 0);
+
   return (
     <div className="app">
       <BrowserRouter>
-        <Header cartSize={cartList.length} />
+        <Header cartSize={cartSize} />
         <RouteSwtich
           productList={productList}
           addProductToCart={addProductToCart}
