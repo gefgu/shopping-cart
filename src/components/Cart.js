@@ -8,7 +8,7 @@ const Cart = ({ cartList, updateProductQuantityInCart }) => {
   );
 
   return (
-    <div>
+    <div className="cart">
       <div className="cart-list">
         {cartList.map((element) => {
           const product = element.product;
@@ -36,8 +36,10 @@ const Cart = ({ cartList, updateProductQuantityInCart }) => {
           );
         })}
       </div>
-      <p>Total Cost: ${costTotal}</p>
-      <button>Checkout</button>
+      <div className="pay-section">
+        <p className="total-cost">Total Cost: ${costTotal}</p>
+        <button className="checkout">Checkout</button>
+      </div>
     </div>
   );
 };

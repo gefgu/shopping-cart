@@ -30,3 +30,26 @@
 .cart-item .description {
   font-size: 1.25rem;
 }
+
+.pay-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pay-section .total-cost {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.pay-section .checkout {
+  font-weight: bold;
+  font-size: 3rem;
+  padding: 8px 24px;
+}
+
+.cart {
+  padding: 16px;
+}
