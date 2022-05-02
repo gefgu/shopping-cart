@@ -1,6 +1,11 @@
 import ProductCartCounter from "./ProductCartCounter";
 
 const Cart = ({ cartList, updateProductQuantityInCart }) => {
+  const costTotal = cartList.reduce(
+    (prev, curr) => curr.product.price * curr.quantity + prev,
+    0
+  );
+
   return (
     <div>
       {cartList.map((element) => {
@@ -27,6 +32,7 @@ const Cart = ({ cartList, updateProductQuantityInCart }) => {
           </div>
         );
       })}
+      <p>Total Cost: ${costTotal}</p>
       <button>Checkout</button>
     </div>
   );
