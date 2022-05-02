@@ -4,7 +4,6 @@ const ProductCartCounter = ({
   cartList,
 }) => {
   const productInCart = cartList.find((elem) => elem.product === product);
-  console.log(productInCart);
 
   return (
     <div>

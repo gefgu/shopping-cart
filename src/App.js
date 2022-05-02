@@ -56,13 +56,8 @@ const App = () => {
     let newCart = [...cartList];
     const index = cartList.findIndex((element) => element.product === product);
     newCart.splice(index, 1);
-    console.log(newCart);
     setCartList([...newCart]);
   };
-
-  useEffect(() => {
-    console.log(cartList);
-  }, [cartList]);
 
   return (
     <div className="app">
