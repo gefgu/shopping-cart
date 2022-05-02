@@ -20,6 +20,10 @@ const Cart = ({ cartList, updateProductQuantityInCart }) => {
                 cartList={cartList}
               />
             </div>
+            <div className="price-container">
+              <p>Unit Price: ${product.price}</p>
+              <p>Total: ${product.price * quantity}</p>
+            </div>
           </div>
         );
       })}
