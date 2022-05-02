@@ -23,7 +23,15 @@ const RouteSwtich = ({
           />
         }
       />
-      <Route path="cart" element={<Cart />} />
+      <Route
+        path="cart"
+        element={
+          <Cart
+            cartList={cartList}
+            updateProductQuantityInCart={updateProductQuantityInCart}
+          />
+        }
+      />
     </Routes>
   );
 };
