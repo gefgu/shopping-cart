@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shopping-cart/static/css/main.e6dcbeb1.css",
-    "main.js": "/shopping-cart/static/js/main.31015f82.js",
+    "main.js": "/shopping-cart/static/js/main.87b30e49.js",
     "static/media/final_empire_map_poster.png": "/shopping-cart/static/media/final_empire_map_poster.a16eaefe5841f75f0298.png",
     "static/media/roshar_map_poster.png": "/shopping-cart/static/media/roshar_map_poster.22ab8bc31a476be6455d.png",
     "static/media/strength_before_weakness_t_shirt.png": "/shopping-cart/static/media/strength_before_weakness_t_shirt.412ceebdab8f3f7ab960.png",
@@ -13,10 +13,10 @@
     "static/media/bridge_4_baseball_cap.png": "/shopping-cart/static/media/bridge_4_baseball_cap.e0840f4e72a72ed5e273.png",
     "index.html": "/shopping-cart/index.html",
     "main.e6dcbeb1.css.map": "/shopping-cart/static/css/main.e6dcbeb1.css.map",
-    "main.31015f82.js.map": "/shopping-cart/static/js/main.31015f82.js.map"
+    "main.87b30e49.js.map": "/shopping-cart/static/js/main.87b30e49.js.map"
   },
   "entrypoints": [
     "static/css/main.e6dcbeb1.css",
-    "static/js/main.31015f82.js"
+    "static/js/main.87b30e49.js"
   ]
 }
