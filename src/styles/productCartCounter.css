@@ -29,6 +29,16 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
+}
+
+.counter .minus:hover,
+.counter .plus:hover {
+  filter: brightness(0.85);
+}
+
+.counter .minus:active,
+.counter .plus:active {
+  filter: brightness(0.65);
 }
