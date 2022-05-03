@@ -2,7 +2,7 @@ import "./styles/app.css";
 import Header from "./components/Header";
 import RouteSwtich from "./RouteSwitch";
 import { BrowserRouter } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import uniqid from "uniqid";
 
 const makeProduct = (productName, price) => {
