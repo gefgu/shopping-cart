@@ -8,7 +8,11 @@ const ProductCartCounter = ({
   const productInCart = cartList.find((elem) => elem.product === product);
 
   const handleInputChange = (e) => {
-    updateProductQuantityInCart(product, e.target.value);
+    const newValue = e.target.value;
+
+    if (newValue === "") return;
+
+    updateProductQuantityInCart(product, newValue);
   };
 
   return (
