@@ -64,7 +64,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <BrowserRouter>
+      <BrowserRouter basename="shopping-cart">
         <Header cartSize={cartSize} />
         <RouteSwtich
           productList={productList}
