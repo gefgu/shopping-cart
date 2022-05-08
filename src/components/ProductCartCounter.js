@@ -10,9 +10,25 @@ const ProductCartCounter = ({
   const handleInputChange = (e) => {
     const newValue = e.target.value;
 
-    if (newValue === "") return;
-
     updateProductQuantityInCart(product, newValue);
+  };
+
+  const handleLoseOfFocus = () => {
+    const value = productInCart.quantity;
+
+    if (+value <= 0 || value === "") {
+      updateProductQuantityInCart(product, 0, true);
+      return;
+    }
+
+    updateProductQuantityInCart(product, +value);
+  };
+
+  const handleKeyPress = (e) => {
+    const key = e.key;
+    if (/^[a-z]$/i.test(key)) {
+      e.preventDefault();
+    }
   };
 
   return (
@@ -22,6 +38,7 @@ const ProductCartCounter = ({
         onClick={() => {
           updateProductQuantityInCart(product, productInCart.quantity - 1);
         }}
+        onBlur={handleLoseOfFocus}
       >
         -
       </button>
@@ -30,6 +47,8 @@ const ProductCartCounter = ({
         name="counter"
         value={productInCart.quantity}
         onChange={handleInputChange}
+        onBlur={handleLoseOfFocus}
+        onKeyDown={handleKeyPress}
         className="counter-value"
       />
       <button
@@ -37,6 +56,7 @@ const ProductCartCounter = ({
         onClick={() => {
           updateProductQuantityInCart(product, productInCart.quantity + 1);
         }}
+        onBlur={handleLoseOfFocus}
       >
         +
       </button>

@@ -58,14 +58,19 @@ describe("Proper counting", () => {
     );
 
     const input = screen.getByRole("spinbutton");
-    await userEvent.type(input, "100");
+    await userEvent.clear(input);
+    await userEvent.paste(input, "100");
     expect(updateProductQuantityInCartMock).lastCalledWith(product, "100");
   });
 
   it("Text input empty and unfocused defaults to 0 in cart", async () => {
     const product = { name: "product" };
     const cartList = [{ product, quantity: 1 }];
-    const updateProductQuantityInCartMock = jest.fn();
+    const updateProductQuantityInCartMock = jest.fn(
+      (product, newValue, shouldRemove) => {
+        cartList[0].quantity = newValue;
+      }
+    );
     render(
       <ProductCartCounter
         product={product}
@@ -75,9 +80,9 @@ describe("Proper counting", () => {
     );
 
     const input = screen.getByRole("spinbutton");
-    await userEvent.paste(input, "");
-    userEvent.tab(); // Change focus
-    expect(updateProductQuantityInCartMock).toBeCalledTimes(0);
-    expect(input).toHaveValue("");
+    await userEvent.clear(input);
+    // expect(input).toHaveValue("");
+    await userEvent.tab(); // Change focus
+    expect(updateProductQuantityInCartMock).lastCalledWith(product, 0, true);
   });
 });

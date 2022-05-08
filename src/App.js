@@ -36,9 +36,8 @@ const App = () => {
     setCartList([...cartList, { product, quantity: 1 }]);
   };
 
-  const updateProductQuantityInCart = (product, newQuantity) => {
-    newQuantity = +newQuantity;
-    if (newQuantity < 1) {
+  const updateProductQuantityInCart = (product, newQuantity, shouldRemove) => {
+    if (shouldRemove) {
       removeProductFromCart(product);
       return;
     }
@@ -60,7 +59,10 @@ const App = () => {
     setCartList([...newCart]);
   };
 
-  const cartSize = cartList.reduce((prev, curr) => curr.quantity + prev, 0);
+  const cartSize = cartList.reduce((prev, curr) => {
+    if (curr.quantity > 0) return +curr.quantity + +prev;
+    return +prev;
+  }, 0);
 
   return (
     <div className="app">
