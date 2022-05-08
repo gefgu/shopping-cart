@@ -15,7 +15,7 @@ const Cart = ({ cartList, updateProductQuantityInCart }) => {
           const quantity = element.quantity;
 
           return (
-            <div className="cart-item" key={product.id}>
+            <article className="cart-item" key={product.id}>
               <div className="left">
                 <img
                   alt={product.name}
@@ -32,7 +32,7 @@ const Cart = ({ cartList, updateProductQuantityInCart }) => {
                 <p>Unit Price: ${product.price}</p>
                 <p>Total: ${product.price * quantity}</p>
               </div>
-            </div>
+            </article>
           );
         })}
       </div>
