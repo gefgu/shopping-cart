@@ -27,6 +27,7 @@ const ProductCartCounter = ({
       </button>
       <input
         type="number"
+        name="counter"
         value={productInCart.quantity}
         onChange={handleInputChange}
         className="counter-value"
