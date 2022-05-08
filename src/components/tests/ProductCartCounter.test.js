@@ -24,4 +24,24 @@ describe("Proper counting", () => {
       cartList[0].quantity - 1
     );
   });
+
+  it("Plus button increases count", () => {
+    const product = { name: "product" };
+    const cartList = [{ product, quantity: 1 }];
+    const updateProductQuantityInCartMock = jest.fn();
+    render(
+      <ProductCartCounter
+        product={product}
+        cartList={cartList}
+        updateProductQuantityInCart={updateProductQuantityInCartMock}
+      />
+    );
+
+    const plusButton = screen.getByRole("button", { name: "+" });
+    userEvent.click(plusButton);
+    expect(updateProductQuantityInCartMock).lastCalledWith(
+      product,
+      cartList[0].quantity + 1
+    );
+  });
 });
