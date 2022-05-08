@@ -17,6 +17,11 @@ describe("Proper counting", () => {
       />
     );
 
-    const minusButton = screen.getByRole("")
+    const minusButton = screen.getByRole("button", { name: "-" });
+    userEvent.click(minusButton);
+    expect(updateProductQuantityInCartMock).lastCalledWith(
+      product,
+      cartList[0].quantity - 1
+    );
   });
 });
